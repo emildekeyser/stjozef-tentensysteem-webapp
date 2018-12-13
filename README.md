@@ -1,1 +1,1 @@
-# Java EE starter template without tests
+# Projectweek 2 2018 Template
