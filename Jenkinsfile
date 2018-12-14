@@ -1,8 +1,9 @@
 pipeline {
-agent {
-    label 'thomas' 
-	}
-environment {
+    agent {
+        label 'projectweek' 
+    }
+
+    environment {
         PROJECT_NAME = pwd().find(/(?<=_).*(?=_)/)
     }
 
@@ -27,6 +28,12 @@ environment {
                     sh "scp -P 22345 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/*.war build@tomcat.projectweek.be:/opt/tomcat/teams/${env.PROJECT_NAME}/ROOT.war"
                 }
             }
+        }
+    }
+
+    post {
+        always {
+            junit 'target/surefire-reports/*.xml'
         }
     }
 }
