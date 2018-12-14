@@ -27,7 +27,12 @@ public class UserTest {
         // Setup the Chrome driver for the whole class
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless","--no-sandbox");
+        
+        // The following arguments are needed for the tests to run successfully in jenkins
+        if (!System.getenv("JENKINS_HOME").isEmpty()) {
+            options.addArguments("--headless","--no-sandbox");
+        }
+        
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
