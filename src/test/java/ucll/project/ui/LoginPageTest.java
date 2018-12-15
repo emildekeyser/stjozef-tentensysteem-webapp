@@ -25,7 +25,7 @@ public class LoginPageTest {
         
         // The following arguments are needed for the tests to run successfully in jenkins
         if (!System.getenv("JENKINS_HOME").isEmpty()) {
-            options.addArguments("--headless","--no-sandbox");
+            options.addArguments("--headless","--no-sandbox", "--window-size=1200,1100");
         }
         
         driver = new ChromeDriver(options);

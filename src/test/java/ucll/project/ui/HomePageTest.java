@@ -25,7 +25,7 @@ public class HomePageTest {
         
         // The following arguments are needed for the tests to run successfully in jenkins
         if (!System.getenv("JENKINS_HOME").isEmpty()) {
-            options.addArguments("--headless","--no-sandbox");
+            options.addArguments("--headless","--no-sandbox", "--window-size=1200,1100");
         }
         
         driver = new ChromeDriver(options);
@@ -47,24 +47,24 @@ public class HomePageTest {
 
     }
 
-//    @Test
-//    public void visitLoginPageFromHomePageTest(){
-//
-//        HomePage homePage = new HomePage(driver);
-//        homePage.navigateTo();
-//        LoginPage loginPage = homePage.clickLogin();
-//        assertEquals("Please sign in",loginPage.getPageTitle());
-//
-//    }
-//
-//    @Test
-//    public void visitSignUpPageFromHomePageTest(){
-//
-//        HomePage homePage = new HomePage(driver);
-//        homePage.navigateTo();
-//        SignUpPage signUpPage = homePage.clickSignUp();
-//        assertEquals("Create an account",signUpPage.getPageTitle());
-//
-//    }
+    @Test
+    public void visitLoginPageFromHomePageTest(){
+
+        HomePage homePage = new HomePage(driver);
+        homePage.navigateTo();
+        LoginPage loginPage = homePage.clickLogin();
+        assertEquals("Please sign in",loginPage.getPageTitle());
+
+    }
+
+    @Test
+    public void visitSignUpPageFromHomePageTest(){
+
+        HomePage homePage = new HomePage(driver);
+        homePage.navigateTo();
+        SignUpPage signUpPage = homePage.clickSignUp();
+        assertEquals("Create an account",signUpPage.getPageTitle());
+
+    }
 
 }

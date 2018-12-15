@@ -30,7 +30,7 @@ public class UserTest {
         
         // The following arguments are needed for the tests to run successfully in jenkins
         if (!System.getenv("JENKINS_HOME").isEmpty()) {
-            options.addArguments("--headless","--no-sandbox");
+            options.addArguments("--headless","--no-sandbox", "--window-size=1200,1100");
         }
         
         driver = new ChromeDriver(options);
@@ -87,12 +87,12 @@ public class UserTest {
 
         LoginPage loginPage = signUpPage.clickSubmitButton();
 
-//        HomePage homePage = loginPage.loginAs(user.getUserName(),password);
-//        assertEquals("Logout, "+ user.getUserName(), homePage.getLogoutLinkText());
-//        assertEquals("Logout, "+ user.getUserName(), homePage.getLogoutLinkText());
-//
-//        homePage = homePage.clickLogoutLink();
-//        assertEquals("Hello world!",homePage.getPageTitle());
+        HomePage homePage = loginPage.loginAs(user.getUserName(),password);
+        assertEquals("Logout, "+ user.getUserName(), homePage.getLogoutLinkText());
+        assertEquals("Logout, "+ user.getUserName(), homePage.getLogoutLinkText());
+
+        homePage = homePage.clickLogoutLink();
+        assertEquals("Hello world!",homePage.getPageTitle());
     }
 
 
