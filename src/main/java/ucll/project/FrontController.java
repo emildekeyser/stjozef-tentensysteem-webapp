@@ -90,7 +90,7 @@ public class FrontController extends HttpServlet {
 
 
         if (requestResource.equals("index")) {
-            request.getRequestDispatcher("/home.jsp").forward(request, response);
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
             return;
         }
 

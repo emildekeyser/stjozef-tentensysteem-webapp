@@ -12,10 +12,8 @@
 
 <div class="container">
     <div class="row">
-
         <div class="col-md-8 well">
             <h2 id="pageTitle">Hello world!</h2>
-            <p>en patatje</p>
         </div>
     </div>
 </div>
