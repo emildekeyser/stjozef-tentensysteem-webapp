@@ -4,7 +4,7 @@ pipeline {
     }
 
     environment {
-        PROJECT_NAME = pwd().find(/(?<=_).*(?=_)/)
+        PROJECT_NAME = 'competenties-verplichtaanwezig'
     }
 
     stages {
