@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="UCLL students">
     <title>Sint-Jozefscollege Aarschot</title>
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="static/css/reset.css">
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
