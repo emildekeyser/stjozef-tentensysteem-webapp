@@ -9,9 +9,9 @@ public class Question extends DatabaseEntity<Integer> {
     private Grade grade;
     private List<Answer> answers = new ArrayList<>();
 
-    public Question(Integer primaryKey, String value, Grade grade1) {
+    public Question(Integer primaryKey, String value, Grade grade) {
     	super(primaryKey);
-        this.setGrade(grade1);
+        this.setGrade(grade);
         this.setValue(value);
     }
 

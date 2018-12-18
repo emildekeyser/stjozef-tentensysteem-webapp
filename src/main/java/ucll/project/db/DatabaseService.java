@@ -4,14 +4,37 @@ import ucll.project.domain.Answer;
 import ucll.project.domain.Tent;
 import ucll.project.domain.Question;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DatabaseService {
 
     IDatabase<Tent,Integer> competences;
     IDatabase<Question,Integer> questions;
     IDatabase<Answer,Integer> answers;
 
+    public DatabaseService() {
+        competences = new InMemoryDatabase<Tent,Integer>();
+        questions = new InMemoryDatabase<Question,Integer>();
+        answers = new InMemoryDatabase<Answer,Integer>();
+
+        DummyData.addData(this);
+    }
+
     public Tent getTent(int primaryKey) {
         return competences.get(primaryKey);
+    }
+
+    public Tent getNextTent(Tent tent) {
+        try {
+            return competences.get(tent.getPlaceNumber());
+        } catch(Exception ex) {
+            return null;
+        }
+    }
+
+    public List<Tent> getAllTenten() {
+        return competences.getAll();
     }
 
     public Answer getAnswer(int primaryKey) {
@@ -23,15 +46,30 @@ public class DatabaseService {
     }
 
     public void addTent(Tent tent) {
-        competences.add(tent);
-    }
 
-    public void addAnswer(Answer answer) {
-        answers.add(answer);
+        competences.add(tent);
+
+        List<Question> tentQuestions = tent.getQuestions();
+
+        for (Question question: tentQuestions) {
+            addQuestion(question);
+        }
+
     }
 
     public void addQuestion(Question question) {
         questions.add(question);
+
+        List<Answer> questionAnswers = question.getAnswers();
+
+        for (Answer answer: questionAnswers) {
+            addAnswer(answer);
+        }
+
+    }
+
+    public void addAnswer(Answer answer) {
+        answers.add(answer);
     }
 
     public boolean containsTent(int primaryKey) {
