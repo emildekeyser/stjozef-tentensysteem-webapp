@@ -3,6 +3,7 @@ package ucll.project.db;
 import ucll.project.domain.Answer;
 import ucll.project.domain.Tent;
 import ucll.project.domain.Question;
+import ucll.project.domain.user.User;
 
 import java.util.ArrayList;
 
@@ -11,6 +12,14 @@ public class DatabaseService {
     IDatabase<Tent,Integer> competences;
     IDatabase<Question,Integer> questions;
     IDatabase<Answer,Integer> answers;
+    IDatabase<User,Integer> users;
+
+    public DatabaseService() {
+        competences = new InMemoryDatabase<>();
+        questions = new InMemoryDatabase<>();
+        answers = new InMemoryDatabase<>();
+        users = new InMemoryDatabase<>();
+    }
 
     public Tent getTent(int primaryKey) {
         return competences.get(primaryKey);
