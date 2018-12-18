@@ -20,13 +20,6 @@ public class DatabaseService {
         questions = new InMemoryDatabase<>();
         answers = new InMemoryDatabase<>();
         users = new InMemoryDatabase<>();
-    }
-
-    public DatabaseService() {
-        competences = new InMemoryDatabase<Tent,Integer>();
-        questions = new InMemoryDatabase<Question,Integer>();
-        answers = new InMemoryDatabase<Answer,Integer>();
-
         DummyData.addData(this);
     }
 
