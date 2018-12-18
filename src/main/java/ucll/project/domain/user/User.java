@@ -1,6 +1,8 @@
 package ucll.project.domain.user;
 
 import ucll.project.db.DatabaseEntity;
+import ucll.project.db.DatabaseException;
+import ucll.project.domain.DomainException;
 
 import javax.xml.bind.DatatypeConverter;
 import java.nio.charset.StandardCharsets;
@@ -8,7 +10,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public abstract class User extends DatabaseEntity<Integer> {
-    private int userId;
     private String userName;
     private String firstName;
     private String lastName;
@@ -60,10 +61,6 @@ public abstract class User extends DatabaseEntity<Integer> {
     }
 
     // Getters and setters and toString
-    public int getUserId() {
-        return this.userId;
-    }
-
     public String getUserName() {
         return this.userName;
     }
@@ -88,27 +85,38 @@ public abstract class User extends DatabaseEntity<Integer> {
         return this.hashedPassword;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
     public void setUserName(String userName) {
+        if (userName == null || userName.trim().isEmpty()) {
+            throw new DomainException("username can't be empty");
+        }
         this.userName = userName;
     }
 
     public void setFirstName(String firstName) {
+        if (firstName == null || firstName.trim().isEmpty()) {
+            throw new DomainException("firstName can't be empty");
+        }
         this.firstName = firstName;
     }
 
     public void setLastName(String lastName) {
+        if (lastName == null || lastName.trim().isEmpty()) {
+            throw new DomainException("lastName can't be empty");
+        }
         this.lastName = lastName;
     }
 
     public void setEmail(String email) {
+        if (email == null || email.trim().isEmpty()) {
+            throw new DomainException("email can't be empty");
+        }
         this.email = email;
     }
 
     public void setGender(Gender gender) {
+        if (gender == null) {
+            throw new DomainException("gender can't be empty");
+        }
         this.gender = gender;
     }
 
@@ -117,6 +125,6 @@ public abstract class User extends DatabaseEntity<Integer> {
     }
 
     public String toString() {
-        return "User(userId=" + this.getUserId() + ", userName=" + this.getUserName() + ", firstName=" + this.getFirstName() + ", lastName=" + this.getLastName() + ", email=" + this.getEmail() + ", gender=" + this.getGender() + ", hashedPassword=" + this.getHashedPassword() + ")";
+        return "(userName=" + this.getUserName() + ", firstName=" + this.getFirstName() + ", lastName=" + this.getLastName() + ", email=" + this.getEmail() + ", gender=" + this.getGender() + ", hashedPassword=" + this.getHashedPassword() + ")";
     }
 }
