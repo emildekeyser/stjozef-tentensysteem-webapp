@@ -71,6 +71,10 @@ public class DatabaseService {
         }
     }
 
+    public void addAnswer(Answer answer) {
+        answers.add(answer);
+    }
+
     public boolean containsTent(int primaryKey) {
         return questions.contains(primaryKey);
     }
