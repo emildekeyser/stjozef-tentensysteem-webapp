@@ -8,5 +8,6 @@
     <title>Sint-Jozefscollege Aarschot</title>
     <link rel="stylesheet" href="static/css/reset.css">
     <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 </head>
 <body>
