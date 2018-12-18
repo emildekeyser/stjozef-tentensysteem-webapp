@@ -23,7 +23,7 @@ public class UserRepositoryMemory implements UserRepository {
             }
         }
         int userId = users.size()+1;
-        user.setUserId(userId);
+        //user.setUserId(userId);
         user.hashAndSetPassword(password);
         users.put(userId, user);
     }
@@ -51,14 +51,13 @@ public class UserRepositoryMemory implements UserRepository {
         }
         throw new InvalidLogin("Invalid username");
     }
-
     @Override
     public void update(User user) {
-        users.replace(user.getUserId(), user);
+        //users.replace(user.getFirstName(), user);
     }
 
     @Override
     public void delete(User user) {
-        users.remove(user.getUserId());
+       // users.remove(user.getFirstName());
     }
 }
