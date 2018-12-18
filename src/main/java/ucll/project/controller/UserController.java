@@ -57,7 +57,7 @@ public class UserController extends BaseController {
     public void handleSignup(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("genders", Gender.values());
-            request.setAttribute("roles", Role.values());
+            //request.setAttribute("roles", Role.values());
             if (request.getMethod().equals("GET")) {
                 request.getRequestDispatcher("/signup.jsp").forward(request, response);
             } else if (request.getMethod().equals("POST")) {
@@ -68,7 +68,7 @@ public class UserController extends BaseController {
                     String firstName = request.getParameter("firstName");
                     String lastName = request.getParameter("lastName");
                     String genderinput = request.getParameter("gender");
-                    String roleinput = request.getParameter("role");
+                    //String roleinput = request.getParameter("role");
                     String password = request.getParameter("password");
                     String passwordRepeat = request.getParameter("passwordRepeat");
 
@@ -77,14 +77,14 @@ public class UserController extends BaseController {
                     request.setAttribute("firstName", firstName);
                     request.setAttribute("lastName", lastName);
                     request.setAttribute("gender", genderinput);
-                    request.setAttribute("role", roleinput);
+                    //request.setAttribute("role", roleinput);
 
                     if (email == null || email.length() == 0) errors.add("Email is required");
                     if (userName == null || userName.length() == 0) errors.add("User name is required");
                     if (firstName == null || firstName.length() == 0) errors.add("First name is required");
                     if (lastName == null || lastName.length() == 0) errors.add("Last name is required");
                     if (genderinput == null) errors.add("Gender is required");
-                    if (roleinput == null) errors.add("Role is required");
+                    //if (roleinput == null) errors.add("Role is required");
                     if (password == null || password.length() == 0) errors.add("Password is required");
                     if (password != null && password.length() < 4) errors.add("Password too short");
                     if (passwordRepeat == null) errors.add("Password repeat is required");
@@ -93,9 +93,9 @@ public class UserController extends BaseController {
                     if (errors.size() == 0) {
                         try {
                             Gender gender = Gender.valueOf(genderinput);
-                            Role role = Role.valueOf(roleinput);
+                            //Role role = Role.valueOf(roleinput);
 
-                            User user = new User(userName, firstName, lastName, email, gender, role);
+                            User user = new Student(1, userName, firstName, lastName, email, gender);
 
                             getUserRepository().createUser(user, password);
 

@@ -1,32 +1,34 @@
 package ucll.project.domain.user;
 
+import ucll.project.db.DatabaseEntity;
+
 import javax.xml.bind.DatatypeConverter;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class User {
+public abstract class User extends DatabaseEntity<Integer> {
     private int userId;
     private String userName;
     private String firstName;
     private String lastName;
     private String email;
     private Gender gender;
-    private Role role;
 
     // hashed password
     private transient String hashedPassword;
 
-    public User() {
+    public User(Integer primaryKey) {
+        super(primaryKey);
     }
 
-    public User(String userName, String firstName, String lastName, String email, Gender gender, Role role){
+    public User(Integer primaryKey, String userName, String firstName, String lastName, String email, Gender gender){
+        super(primaryKey);
         setUserName(userName);
         setFirstName(firstName);
         setLastName(lastName);
         setEmail(email);
         setGender(gender);
-        setRole(role);
     }
 
     public void hashAndSetPassword(String password) {
@@ -82,10 +84,6 @@ public class User {
         return this.gender;
     }
 
-    public Role getRole() {
-        return this.role;
-    }
-
     public String getHashedPassword() {
         return this.hashedPassword;
     }
@@ -114,15 +112,11 @@ public class User {
         this.gender = gender;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
     public void setHashedPassword(String hashedPassword) {
         this.hashedPassword = hashedPassword;
     }
 
     public String toString() {
-        return "User(userId=" + this.getUserId() + ", userName=" + this.getUserName() + ", firstName=" + this.getFirstName() + ", lastName=" + this.getLastName() + ", email=" + this.getEmail() + ", gender=" + this.getGender() + ", role=" + this.getRole() + ", hashedPassword=" + this.getHashedPassword() + ")";
+        return "User(userId=" + this.getUserId() + ", userName=" + this.getUserName() + ", firstName=" + this.getFirstName() + ", lastName=" + this.getLastName() + ", email=" + this.getEmail() + ", gender=" + this.getGender() + ", hashedPassword=" + this.getHashedPassword() + ")";
     }
 }
