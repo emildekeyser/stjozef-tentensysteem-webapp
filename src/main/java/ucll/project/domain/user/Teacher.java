@@ -26,4 +26,8 @@ public class Teacher extends User{
     public StudentClass getStudentClass() {
         return this.studentClass;
     }
+
+    public Grade getGrade() {
+        return this.getStudentClass()==null?null:this.getStudentClass().getGrade();
+    }
 }

@@ -24,6 +24,10 @@ public class Student extends User{
         }
     }
 
+    public Grade getGrade() {
+        return this.getStudentClass()==null?null:this.getStudentClass().getGrade();
+    }
+
     public StudentClass getStudentClass() {
         return this.studentClass;
     }

@@ -71,4 +71,16 @@ public class StudentClass {
         }
         this.name = name;
     }
+
+    public void setGrade(Grade g) {
+        if (g == null) {
+            throw new DomainException("Grade can't be empty");
+        }
+
+        this.grade = g;
+    }
+
+    public Grade getGrade() {
+        return this.grade;
+    }
 }
