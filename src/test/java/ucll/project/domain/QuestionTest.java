@@ -1,4 +1,4 @@
-package ucll.project.domain.unitTests;
+package ucll.project.domain;
 
 import org.junit.Before;
 import org.junit.Test;

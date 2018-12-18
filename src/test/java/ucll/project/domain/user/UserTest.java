@@ -11,13 +11,12 @@ public class UserTest {
 
     @Test
     public void CreateUserTest(){
-        User user = new User(
+        User user = new Student(1,
                 "userName",
                 "firstName",
                 "lastName",
                 "email@example.com",
-                Gender.FEMALE,
-                Role.ADMIN
+                Gender.FEMALE
         );
         assertEquals(user.getUserName(), "userName");
     }

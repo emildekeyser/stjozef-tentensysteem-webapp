@@ -14,12 +14,12 @@ Given no tents are registered in the app
 When the student opens the app
 Then he can see the message "No tents found, please contact your teacher."
 
-Scenario: The name and description of each tent is shown
+Scenario Outline: The name and description of each tent is shown
 Given the tent with the title <title> is registered in the app
 When the student opens the app
 Then he can see the tent <title> with the description <description>
 
-Examples: Tents
+Examples:
 | title           | description |
 | Problem Solving | How do you deal with unexpected situations |
 | Perseverance    | How do you react when things get though |
