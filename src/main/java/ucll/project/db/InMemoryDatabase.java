@@ -18,6 +18,11 @@ public class InMemoryDatabase<T extends DatabaseEntity<K>,K> implements IDatabas
     }
 
     @Override
+    public boolean contains(T record) {
+        return false;
+    }
+
+    @Override
     public T get(K primaryKey) {
         if(primaryKey == null){
             throw new NullPointerException("Primary key is null");

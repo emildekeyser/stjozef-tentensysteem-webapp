@@ -6,6 +6,8 @@ public interface IDatabase<T extends DatabaseEntity,K> {
 
     boolean contains(K primaryKey);
 
+    boolean contains(T record);
+
     T get(K primaryKey);
 
     List<T> getAll();
