@@ -7,9 +7,9 @@ public class Answer extends DatabaseEntity<Integer> {
     private int point;
 
     public Answer(Integer primaryKey, String value, int point) {
+        super(primaryKey);
         this.setValue(value);
         this.setPoint(point);
-        super(primaryKey);
     }
 
     public String getValue() {

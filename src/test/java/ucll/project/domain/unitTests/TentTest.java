@@ -18,12 +18,12 @@ public class TentTest {
 
     @Before
     public void setUp() {
-        tent2 = new Tent("name", "desc");
+        tent2 = new Tent(1, "name", "desc");
     }
 
     @Test
     public void createTentTest() {
-        Tent tent = new Tent("tentName", "this is a description");
+        Tent tent = new Tent(1, "tentName", "this is a description");
 
         assertEquals(tent.getName(), "tentName");
         assertEquals(tent.getDescription(), "this is a description");
@@ -31,27 +31,27 @@ public class TentTest {
 
     @Test(expected = DomainException.class)
     public void createTentWithoutNameThrowsExceptionTest() {
-        Tent tent = new Tent(null, "description");
+        Tent tent = new Tent(1, null, "description");
     }
 
     @Test(expected = DomainException.class)
     public void createTentWithoutDescriptionThrowsExceptionTest() {
-        Tent tent = new Tent("tentName", null);
+        Tent tent = new Tent(1, "tentName", null);
     }
 
     @Test(expected = DomainException.class)
     public void createTentWithEmptyNameThrowsExceptionTest() {
-        Tent tent = new Tent("", "description");
+        Tent tent = new Tent(1, "", "description");
     }
 
     @Test(expected = DomainException.class)
     public void createTentWithEmptyDescriptionThrowsExceptionTest() {
-        Tent tent = new Tent("tentName", "");
+        Tent tent = new Tent(1, "tentName", "");
     }
 
     @Test
     public void addQuestionsToTentTest() {
-        Question q = new Question("question", Grade.Grade1);
+        Question q = new Question(1, "question", Grade.Grade1);
 
         tent2.addQuestion(q);
         assertEquals(q, tent2.getQuestion("question"));
@@ -59,8 +59,8 @@ public class TentTest {
 
     @Test
     public void getQuestionsTest() {
-        Question q1 = new Question("q1", Grade.Grade1);
-        Question q2 = new Question("q2", Grade.Grade1);
+        Question q1 = new Question(1, "q1", Grade.Grade1);
+        Question q2 = new Question(1, "q2", Grade.Grade1);
 
         tent2.addQuestion(q1);
         tent2.addQuestion(q2);
@@ -79,15 +79,15 @@ public class TentTest {
 
     @Test(expected = DomainException.class)
     public void addSameQuestionTwiceThrowsExceptionTest() {
-        Question q = new Question("q", Grade.Grade1);
+        Question q = new Question(1, "q", Grade.Grade1);
         tent2.addQuestion(q);
         tent2.addQuestion(q);
     }
 
     @Test
     public void addMultipleQuestionsTest() {
-        Question q1 = new Question("q1", Grade.Grade1);
-        Question q2 = new Question("q2", Grade.Grade1);
+        Question q1 = new Question(1, "q1", Grade.Grade1);
+        Question q2 = new Question(1, "q2", Grade.Grade1);
 
         List<Question> questions = new ArrayList<>();
 
@@ -100,8 +100,8 @@ public class TentTest {
 
     @Test
     public void addMultipleQuestionsWithDifferentGradeTest() {
-        Question q1 = new Question("q1", Grade.Grade1);
-        Question q2 = new Question("q2", Grade.Grade2);
+        Question q1 = new Question(1, "q1", Grade.Grade1);
+        Question q2 = new Question(1, "q2", Grade.Grade2);
 
         List<Question> questions = new ArrayList<>();
 

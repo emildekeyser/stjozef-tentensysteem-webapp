@@ -20,12 +20,12 @@ public class QuestionTest {
 
     @Before
     public void setUp() {
-        question2 = new Question("iets", Grade.Grade1);
+        question2 = new Question(1, "iets", Grade.Grade1);
     }
 
     @Test
     public void createQuestionTest() {
-        Question question = new Question("iets", Grade.Grade1);
+        Question question = new Question(1, "iets", Grade.Grade1);
 
         assertEquals("iets", question.getValue());
         assertEquals(Grade.Grade1, question.getGrade());
@@ -33,22 +33,22 @@ public class QuestionTest {
 
     @Test(expected = DomainException.class)
     public void createQuestionWithoutValueThrowsExceptionTest() {
-        Question question = new Question(null, Grade.Grade1);
+        Question question = new Question(1, null, Grade.Grade1);
     }
 
     @Test(expected = DomainException.class)
     public void createQuestionWithoutGradeThrowsExceptionTest() {
-        Question question = new Question("iets", null);
+        Question question = new Question(1, "iets", null);
     }
 
     @Test(expected = DomainException.class)
     public void createQuestionWithEmptyValueThrowsExceptionTest() {
-        Question question = new Question("", Grade.Grade1);
+        Question question = new Question(1, "", Grade.Grade1);
     }
 
     @Test
     public void addAnswerTest() {
-        Answer answer = new Answer("antwoord", 5);
+        Answer answer = new Answer(1, "antwoord", 5);
         question2.addAnswer(answer);
 
         assertEquals(answer, question2.getAnswer("antwoord"));
@@ -61,8 +61,8 @@ public class QuestionTest {
 
     @Test
     public void getAnswersTest() {
-        Answer answer1 = new Answer("antwoord", 4);
-        Answer answer2 = new Answer("antwoord2", 4);
+        Answer answer1 = new Answer(1, "antwoord", 4);
+        Answer answer2 = new Answer(1, "antwoord2", 4);
 
         question2.addAnswer(answer1);
         question2.addAnswer(answer2);
@@ -76,23 +76,23 @@ public class QuestionTest {
 
     @Test(expected = DomainException.class)
     public void addSameAnswerTwiceThrowsExceptionTest() {
-        Answer answer = new Answer("antwoord", 3);
+        Answer answer = new Answer(1, "antwoord", 3);
         question2.addAnswer(answer);
         question2.addAnswer(answer);
     }
 
     @Test
     public void equalsMethodReturnsTrueTest() {
-        Question question1 = new Question("antwoord", Grade.Grade1);
-        Question question2 = new Question("antwoord", Grade.Grade1);
+        Question question1 = new Question(1, "antwoord", Grade.Grade1);
+        Question question2 = new Question(1, "antwoord", Grade.Grade1);
 
         assertTrue(question1.equals(question2));
     }
 
     @Test
     public void equalsMethodReturnsFalseTest() {
-        Question question1 = new Question("antwoord", Grade.Grade1);
-        Question question2 = new Question("iets", Grade.Grade1);
+        Question question1 = new Question(1, "antwoord", Grade.Grade1);
+        Question question2 = new Question(1, "iets", Grade.Grade1);
 
         assertFalse(question1.equals(question2));
     }

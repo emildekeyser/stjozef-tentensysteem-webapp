@@ -12,9 +12,9 @@ public class Tent extends DatabaseEntity<Integer> {
     private List<Question> questions = new ArrayList<>();
 
     public Tent(Integer primaryKey, String name, String description) {
+        super(primaryKey);
         this.setName(name);
         this.setDescription(description);
-        super(primaryKey);
     }
 
     public String getName() {

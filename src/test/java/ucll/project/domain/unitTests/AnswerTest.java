@@ -12,7 +12,7 @@ public class AnswerTest {
 
     @Test
     public void createAnswerTest() {
-        Answer answer = new Answer("antwoord", 5);
+        Answer answer = new Answer(1, "antwoord", 5);
 
         assertEquals("antwoord", answer.getValue());
         assertEquals(5, answer.getPoint());
@@ -20,31 +20,31 @@ public class AnswerTest {
 
     @Test(expected = DomainException.class)
     public void createAnswerWithoutValueThrowsExceptionTest() {
-        Answer answer = new Answer(null, 5);
+        Answer answer = new Answer(1, null, 5);
     }
 
     @Test(expected = DomainException.class)
     public void createAnswerWithNegativePointThrowsExceptionTest() {
-        Answer answer = new Answer("antwoord", -1);
+        Answer answer = new Answer(1, "antwoord", -1);
     }
 
     @Test(expected = DomainException.class)
     public void createAnswerWithEmptyValueThrowsExceptionTest() {
-        Answer answer = new Answer("", 5);
+        Answer answer = new Answer(1, "", 5);
     }
 
     @Test
     public void equalsMethodReturnsTrueTest() {
-        Answer answer1 = new Answer("antwoord", 5);
-        Answer answer2 = new Answer("antwoord", 5);
+        Answer answer1 = new Answer(1, "antwoord", 5);
+        Answer answer2 = new Answer(1, "antwoord", 5);
 
         assertTrue(answer1.equals(answer2));
     }
 
     @Test
     public void equalsMethodReturnsFalseTest() {
-        Answer answer1 = new Answer("antwoord", 5);
-        Answer answer2 = new Answer("iets", 5);
+        Answer answer1 = new Answer(1, "antwoord", 5);
+        Answer answer2 = new Answer(1, "iets", 5);
 
         assertFalse(answer1.equals(answer2));
     }
