@@ -9,14 +9,11 @@
 <%@ include file="components/navigation.jspf"%>
 
 <!-- Page Content -->
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 well">
-            <h2 id="pageTitle">Welkom leerling!</h2>
-        </div>
-    </div>
-</div>
+<main>
+   <h2>WELKOM LEERLING!</h2>
+   <article>
+      <p> <img src="static/images/overviewTenten.PNG" alt="Tenten Overzicht"> </p>
+   </article>
+</main>
 
 
-<%@ include file="components/footer.jspf"%>

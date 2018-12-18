@@ -8,6 +8,8 @@ import ucll.project.domain.user.User;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.ArrayList;
+
 public class DatabaseService {
 
     IDatabase<Tent,Integer> competences;
@@ -57,7 +59,10 @@ public class DatabaseService {
         for (Question question: tentQuestions) {
             addQuestion(question);
         }
+    }
 
+    public void addAnswer(Answer answer) {
+        answers.add(answer);
     }
 
     public void addQuestion(Question question) {
@@ -68,11 +73,6 @@ public class DatabaseService {
         for (Answer answer: questionAnswers) {
             addAnswer(answer);
         }
-
-    }
-
-    public void addAnswer(Answer answer) {
-        answers.add(answer);
     }
 
     public boolean containsTent(int primaryKey) {

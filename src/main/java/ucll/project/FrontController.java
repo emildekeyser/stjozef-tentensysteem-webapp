@@ -34,7 +34,6 @@ public class FrontController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("sdfs");
         handle(request, response);
     }
 
@@ -107,6 +106,7 @@ public class FrontController extends HttpServlet {
             request.setAttribute("competences", service.getAllTenten());
             request.getRequestDispatcher("/competences.jsp").forward(request, response);
             return;
+
         } else if (requestResource.equals("test")) {
             try {
                 Tent tent;
@@ -117,17 +117,18 @@ public class FrontController extends HttpServlet {
                     tent = service.getTent(Integer.parseInt( placeNumber ) + 1);
                 }
                 request.setAttribute("tent", tent);
-                request.getRequestDispatcher("/solveTest.jsp").forward(request, response);
+                request.getRequestDispatcher("/test.jsp").forward(request, response);
             } catch (NumberFormatException ex) {
                 request.getRequestDispatcher("/error.jsp").forward(request, response);
             } catch(Exception ex) {
-                //forward naar resultaat
+                ex.printStackTrace();
             }
             return;
         } else if (requestResource.equals("result")) {
             request.getRequestDispatcher("/result.jsp").forward(request, response);
             return;
         }
+
 
         // if no route was found, show error. Make sure to return after each forward!
         request.getRequestDispatcher("/error.jsp").forward(request, response);
