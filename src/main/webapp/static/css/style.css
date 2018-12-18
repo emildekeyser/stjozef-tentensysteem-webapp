@@ -6,17 +6,17 @@ body {
 }
 nav {
     height:50%;
-    margin: 1em;
+    margin: 1em 0 1em 0;
 }
-ul {
+nav ul {
     display: flex;
     margin : 0px;
     padding: 0px;
     list-style-type:none;
-    background-color:#1A86B0;
+    background-color:#3E7280;
 }
 
-li {
+nav ul li {
     width: 100%;
     padding: 1.2em;
 }
@@ -35,4 +35,8 @@ H2 {
 
 #start {
     color:black;
+}
+
+article ul {
+    list-style-image: url('static/images/tentIcon2');
 }

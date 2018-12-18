@@ -10,12 +10,22 @@
 
 <!-- Page Content -->
 <main>
+    <h2>
+        Hier vind je alle tenten terug!
+    </h2>
     <article>
-        <h2>
-            Hier vind je alle tenten terug!
-        </h2>
+        <ul>
+            <c:forEach items="${competences}" var="competence">
+                <!--<img src="static/images/tentIcon2" alt="tent icon">-->
+                <li>${competence.name}</li>
+            </c:forEach>
+        </ul>
+    </article>
+    <article>
+
         <a id="start" href="test">Start jouw test!</a>
-        <p> <img src="static/images/TentenOverzicht.png" alt="Tenten Overzicht"> </p>
+
+
 
     </article>
 </main>

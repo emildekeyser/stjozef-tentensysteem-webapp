@@ -10,7 +10,10 @@
 
 <!-- Page Content -->
 <main>
-   <p>WELKOM LEERLING!</p>
+   <h2>WELKOM LEERLING!</h2>
+   <article>
+      <p> <img src="static/images/overviewTenten.PNG" alt="Tenten Overzicht"> </p>
+   </article>
 </main>
 
 

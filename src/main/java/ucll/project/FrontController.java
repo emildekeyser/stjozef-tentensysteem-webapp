@@ -37,6 +37,7 @@ public class FrontController extends HttpServlet {
 
     private void handle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Get the request URI and parse it
+        System.out.println("aaaaaaaas");
         String requestURI = request.getRequestURI();
 
         String method = request.getMethod();

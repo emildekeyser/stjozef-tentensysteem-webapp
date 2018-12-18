@@ -7,7 +7,10 @@
             <a href="index.jsp">HOME</a>
         </li>
         <li>
-            <a href="competences">TEST</a>
+            <a href="test">TEST</a>
+        </li>
+        <li>
+            <a href="competences">TENTEN</a>
         </li>
     </ul>
 </nav>

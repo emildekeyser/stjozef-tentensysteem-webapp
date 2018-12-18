@@ -11,10 +11,10 @@
 <!-- Page Content -->
 <main>
     <article>
-        <!--<h1><c:out value="Competentie"</h1>-->
+        <!--<h1><c:out value="${competence.name}"</h1>-->
         <div class="container">
-            <form method="post" action="submitTest">
-                <c:forEach items="${tent.questions}" var="question">
+            <form method="post" action="test">
+                <c:forEach items="${competence.questions}" var="question">
                     <p>
                             ${question.value}
                     </p>
