@@ -11,7 +11,9 @@
 <!-- Page Content -->
 <main>
     <article>
-        
+        <h1><c:out value="Competentie"</h1>
+        <p> <c:forEach var="AnswerList"  items="${AnswerList}"></p>
+
     </article>
 </main>
 

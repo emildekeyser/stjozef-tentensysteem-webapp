@@ -14,7 +14,7 @@
         <h2>
             Hier vind je alle tenten terug!
         </h2>
-        <a id="start" href="test.jsp">Start jouw test!</a>
+        <a id="start" href="test">Start jouw test!</a>
         <p> <img src="static/images/TentenOverzicht.png" alt="Tenten Overzicht"> </p>
 
     </article>

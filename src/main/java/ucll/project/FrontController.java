@@ -95,6 +95,8 @@ public class FrontController extends HttpServlet {
         } else if (requestResource.equals("competences")) {
             request.getRequestDispatcher("/competences.jsp").forward(request, response);
             return;
+        } else if (requestResource.equals("test")) {
+            request.getRequestDispatcher("/test.jsp").forward(request,response);
         }
 
         // if no route was found, show error. Make sure to return after each forward!
