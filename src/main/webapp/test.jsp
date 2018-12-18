@@ -11,9 +11,22 @@
 <!-- Page Content -->
 <main>
     <article>
-        <h1><c:out value="Competentie"</h1>
-        <p> <c:forEach var="AnswerList"  items="${AnswerList}"></p>
+        <!--<h1><c:out value="Competentie"</h1>-->
+        <div class="container">
+            <form method="post" action="submitTest">
+                <c:forEach items="${tent.questions}" var="question">
+                    <p>
+                            ${question.value}
+                    </p>
+                    <c:forEach items="${question.answers}" var="answer">
+                        <input type="radio" name="${answer.value}">${answer.value} <br>
+                    </c:forEach>
+                </c:forEach>
+                <input type="hidden" value="${tent.placeNumber}">
+                <input type="submit" value="KNOP">
+            </form>
 
+        </div>
     </article>
 </main>
 

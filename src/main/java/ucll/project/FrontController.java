@@ -1,6 +1,7 @@
 package ucll.project;
 
 import ucll.project.controller.UserController;
+import ucll.project.db.DatabaseService;
 import ucll.project.domain.user.UserRepository;
 import ucll.project.domain.user.UserRepositoryMemory;
 
@@ -98,6 +99,7 @@ public class FrontController extends HttpServlet {
         } else if (requestResource.equals("test")) {
             request.getRequestDispatcher("/test.jsp").forward(request,response);
         }
+
 
         // if no route was found, show error. Make sure to return after each forward!
         request.getRequestDispatcher("/error.jsp").forward(request, response);

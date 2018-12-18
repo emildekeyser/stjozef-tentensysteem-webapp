@@ -4,6 +4,8 @@ import ucll.project.domain.Answer;
 import ucll.project.domain.Tent;
 import ucll.project.domain.Question;
 
+import java.util.ArrayList;
+
 public class DatabaseService {
 
     IDatabase<Tent,Integer> competences;
@@ -57,7 +59,5 @@ public class DatabaseService {
     public boolean containsQuestion(Question question) {
         return questions.contains(question);
     }
-
-
 
 }
