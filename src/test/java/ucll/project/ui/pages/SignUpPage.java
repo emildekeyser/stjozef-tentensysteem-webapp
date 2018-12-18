@@ -1,4 +1,4 @@
-package ucll.project.ui.pages;
+/*package ucll.project.ui.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -102,3 +102,4 @@ public class SignUpPage {
     }
 
 }
+*/
