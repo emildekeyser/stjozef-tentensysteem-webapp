@@ -14,7 +14,7 @@ public class DummyUserData {
                 new User("support",
                         "support", "user",
                         "support@example.com",
-                        Gender.MALE, Role.SUPPORT
+                        Gender.MALE, Role.TEACHER
                 ),
                 "support" // password
         );
@@ -22,7 +22,7 @@ public class DummyUserData {
                 new User("user",
                         "simple", "user",
                         "user@example.com",
-                        Gender.FEMALE, Role.USER
+                        Gender.FEMALE, Role.STUDENT
                 ),
                 "user" // password
         );
@@ -30,7 +30,7 @@ public class DummyUserData {
                 new User("user2",
                         "simple2", "user",
                         "user2@example.com",
-                        Gender.MALE, Role.USER
+                        Gender.MALE, Role.STUDENT
                 ),
                 "user2" // password
         );
