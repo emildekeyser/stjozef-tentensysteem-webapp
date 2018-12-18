@@ -16,16 +16,10 @@ public class DatabaseService {
     IDatabase<User,Integer> users;
 
     public DatabaseService() {
-        competences = new InMemoryDatabase<>();
-        questions = new InMemoryDatabase<>();
-        answers = new InMemoryDatabase<>();
-        users = new InMemoryDatabase<>();
-    }
-
-    public DatabaseService() {
         competences = new InMemoryDatabase<Tent,Integer>();
         questions = new InMemoryDatabase<Question,Integer>();
         answers = new InMemoryDatabase<Answer,Integer>();
+        //users = new InMemoryDatabase<>();
 
         DummyData.addData(this);
     }
