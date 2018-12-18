@@ -7,9 +7,17 @@ import ucll.project.db.DatabaseEntity;
 
 public class Tent extends DatabaseEntity<Integer> {
 
+    private int placeNumber;
     private String name;
     private String description;
     private List<Question> questions = new ArrayList<>();
+
+    public Tent(Integer primaryKey, String name, String description, int placeNumber) {
+        super(primaryKey);
+        this.setName(name);
+        this.setDescription(description);
+        this.placeNumber = placeNumber;
+    }
 
     public Tent(Integer primaryKey, String name, String description) {
         super(primaryKey);
@@ -100,5 +108,9 @@ public class Tent extends DatabaseEntity<Integer> {
     @Override
     public String toString() {
         return this.name + ": " + this.description;
+    }
+
+    public int getPlaceNumber() {
+        return this.placeNumber;
     }
 }
