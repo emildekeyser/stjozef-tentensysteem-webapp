@@ -1,9 +1,12 @@
 * {
-    font-family: 'Dosis';
+    font-family: 'Quicksand';
 }
-
+body {
+    text-align: center;
+}
 nav {
     height:50%;
+    margin: 1em;
 }
 ul {
     display: flex;
@@ -22,10 +25,14 @@ a {
     font-size: 1.5em;
     text-decoration: none;
     font-weight: bold;
-    font-family: 'Dosis';
+    font-family: 'Quicksand';
 
 }
 H2 {
     color: black;
     font-size:1.5em;
+}
+
+#start {
+    color:black;
 }

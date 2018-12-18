@@ -10,7 +10,9 @@
 
 <!-- Page Content -->
 <main>
-   <p>WELKOM LEERLING!</p>
+    <article>
+        
+    </article>
 </main>
 
 
