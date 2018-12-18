@@ -1,12 +1,15 @@
 package ucll.project.domain;
 
-public class Answer {
+import ucll.project.db.DatabaseEntity;
+
+public class Answer extends DatabaseEntity<Integer> {
     private String value;
     private int point;
 
-    public Answer(String value, int point) {
+    public Answer(Integer primaryKey, String value, int point) {
         this.setValue(value);
         this.setPoint(point);
+        super(primaryKey);
     }
 
     public String getValue() {

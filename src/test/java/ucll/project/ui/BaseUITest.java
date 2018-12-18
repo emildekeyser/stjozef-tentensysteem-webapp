@@ -1,4 +1,4 @@
-package ucll.project.ui;
+/*package ucll.project.ui;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.AfterClass;
@@ -32,3 +32,4 @@ public class BaseUITest {
         driver.close();
     }
 }
+*/

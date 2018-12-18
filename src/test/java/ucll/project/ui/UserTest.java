@@ -1,4 +1,4 @@
-package ucll.project.ui;
+/*package ucll.project.ui;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
@@ -42,7 +42,7 @@ public class UserTest extends BaseUITest {
     public void deleteUser() {
         /*
          * TODO delete user
-         */
+
     }
 
     @Test
@@ -71,3 +71,4 @@ public class UserTest extends BaseUITest {
 
 
 }
+*/

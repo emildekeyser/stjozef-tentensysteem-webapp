@@ -1,14 +1,16 @@
 package ucll.project.domain;
 
+import ucll.project.db.DatabaseEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Question {
+public class Question extends DatabaseEntity<Integer> {
     private String value;
     private Grade grade;
     private List<Answer> answers = new ArrayList<>();
 
-    public Question(String value, Grade grade1) {
+    public Question(Integer primaryKey, String value, Grade grade1) {
+    	super(primaryKey);
         this.setGrade(grade1);
         this.setValue(value);
     }

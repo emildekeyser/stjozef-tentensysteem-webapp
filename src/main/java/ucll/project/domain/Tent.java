@@ -1,19 +1,20 @@
 package ucll.project.domain;
 
-import org.postgresql.core.v2.QueryExecutorImpl;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tent {
+import ucll.project.db.DatabaseEntity;
+
+public class Tent extends DatabaseEntity<Integer> {
 
     private String name;
     private String description;
     private List<Question> questions = new ArrayList<>();
 
-    public Tent(String name, String description) {
+    public Tent(Integer primaryKey, String name, String description) {
         this.setName(name);
         this.setDescription(description);
+        super(primaryKey);
     }
 
     public String getName() {
