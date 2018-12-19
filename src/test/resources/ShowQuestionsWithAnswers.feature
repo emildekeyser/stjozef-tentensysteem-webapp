@@ -1,4 +1,4 @@
-Story 02. Show questions with their Answers
+Feature: Story 02. Show questions with their Answers
 Narrative:
 As a student
 I want to see all answers for each question per tent
@@ -11,14 +11,15 @@ All the questions from that tent
 The possible answers for each question
 The possible answers are shown in a random order
 
-Scenarios:
-Scenario: Show questions with their answers
-Given there are questions for that tent
-When the tent is opened
-Then the questions are shown with the tent it belongs to
-And the possible answers are shown in a random order
-
-
+Scenario Outline: Show questions with their answers per tent
+Given I can see <tent>
+Then the questions are shown
+And its answers are shown
+  Examples:
+    | tent            |
+    | Problem Solving |
+    | Perseverance    |
+    | Team Spirit     |
 
 
 
