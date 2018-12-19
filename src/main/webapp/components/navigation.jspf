@@ -4,13 +4,13 @@
 <nav>
     <ul>
         <li>
-            <a href="index.jsp">Home</a>
+            <a href="index">Home</a>
         </li>
         <li>
             <a href="competences">Tenten</a>
         </li>
         <li>
-            <a href="test.jsp">Test</a>
+            <a href="test">Test</a>
         </li>
     </ul>
 </nav>

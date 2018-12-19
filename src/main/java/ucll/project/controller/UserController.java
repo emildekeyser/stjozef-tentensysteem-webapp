@@ -29,7 +29,7 @@ public class UserController extends BaseController {
             }
             try {
                 User user = getUserRepository().loginUser(username, password);
-                request.getSession().setAttribute("userid", user.getUserId());
+                //request.getSession().setAttribute("userid", user.getUserId());
                 request.setAttribute("user", user);
                 response.sendRedirect("/");
             } catch (InvalidLogin error) {
